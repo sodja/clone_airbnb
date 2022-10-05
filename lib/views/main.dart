@@ -16,7 +16,7 @@ void main() {
         ),
         fontFamily: 'Poppins'
     ),
-    initialRoute: '/login',
+    initialRoute: '/home',
     getPages: appRoutes(),
     enableLog: true,
     defaultTransition: Transition.fade,

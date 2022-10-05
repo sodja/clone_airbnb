@@ -34,3 +34,23 @@ Container continueWith(String image) {
     child: Image.asset(image,),
   );
 }
+
+Padding buildScrollActivities(String text,String imgUri){
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 10),
+    child: Column(
+      children: <Widget>[
+        Container(
+            color: Colors.white,
+            height: 250,
+            width: 350,
+            child: Image.asset(imgUri,fit: BoxFit.fill,)
+        ),
+        Container(
+            width: double.infinity,
+            color: Colors.black,
+            child: Text(text,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)),
+      ],
+    ),
+  );
+}

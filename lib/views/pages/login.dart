@@ -33,7 +33,7 @@ class LoginPage extends GetView {
                     fit: BoxFit.scaleDown,
                   ),
                 ),
-                const Text("Welcome To ",
+                const Text("Bienvenue sur",
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),),
                 const SizedBox(height: 25,),
                 Visibility(
@@ -86,7 +86,7 @@ class LoginPage extends GetView {
                   child: const TextField(
                     obscureText: true,
                     decoration: InputDecoration(
-                        hintText: "Password",
+                        hintText: "Mot de passe",
                         border: InputBorder.none,
                         hintStyle: TextStyle(color: Colors.grey),
                         prefixIcon: Icon(
@@ -101,7 +101,7 @@ class LoginPage extends GetView {
                     child: Align(
                         alignment: Alignment.centerRight,
                         child: Text(
-                          "Forgot password ?", style: TextStyle(color: greenAirbnb, fontSize: 12),)),
+                          "Mot de passe oublié ?", style: TextStyle(color: greenAirbnb, fontSize: 12),)),
                   ),
                 ),
                 SizedBox(height: controller.inscription.value ? 30 : 0,),
@@ -135,7 +135,7 @@ class LoginPage extends GetView {
                       ],
                     ),
                     child: Center(child: Text(
-                      !controller.inscription.value ? "Continue" : "Login",
+                      !controller.inscription.value ? "Continuer" : "Connexion",
                       style: const TextStyle(fontWeight: FontWeight.w600,
                           color: Colors.white),)),
                   ),
@@ -152,16 +152,16 @@ class LoginPage extends GetView {
                         child: RichText(
                           text: TextSpan(
                               text: controller.inscription.value
-                                  ? "Do you have an account ? "
-                                  : "New User ?",
+                                  ? "Avez-vous un compte ? "
+                                  : "Nouveau utilisateur ?",
                               style: TextStyle(color: Colors.grey[500],
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500),
                               children: [
                                 TextSpan(
                                   text: controller.inscription.value
-                                      ? "Sign in"
-                                      : " Create an account",
+                                      ? "Connexion"
+                                      : "Créer un compte",
                                   style: const TextStyle(color: greenAirbnb,
                                       fontWeight: FontWeight.w600,
                                       fontSize: 14),)
@@ -172,7 +172,7 @@ class LoginPage extends GetView {
                   ),
                 ),
                 const SizedBox(height: 20,),
-                Text("Or continue with ", style: TextStyle(
+                Text("Ou continuer avec ", style: TextStyle(
                     color: Colors.grey[500],
                     fontSize: 14,
                     fontWeight: FontWeight.w500),),
@@ -180,8 +180,8 @@ class LoginPage extends GetView {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    continueWith("assets/images/social_media/google.png"),
-                    continueWith("assets/images/social_media/phone.png"),
+                   /* continueWith("assets/images/social_media/google.png"),
+                    continueWith("assets/images/social_media/phone.png"),*/
                   ],
                 )
               ],
