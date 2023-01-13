@@ -1,23 +1,39 @@
-import 'package:airbnb_clone/controllers/home_controller.dart';
-import 'package:airbnb_clone/views/pages/login.dart';
+import 'dart:convert';
+
+import 'package:airbnb_clone/views/components/FavorisItem.dart';
+import 'package:airbnb_clone/views/pages/favoris.dart';
+import 'package:airbnb_clone/views/pages/Articles.dart';
+import 'package:airbnb_clone/views/pages/tips.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../commons/constants.dart';
-import 'HomeScreen.dart';
+import '../../commons/Constants.dart';
+import '../../controllers/home_controller.dart';
+import '../../models/Address.dart';
+import '../../models/Appartement.dart';
+import '../../models/Hotel.dart';
+import '../../models/Property.dart';
+import 'favoris_list_page.dart';
+import 'home_screen.dart';
+import 'messages.dart';
+import 'profile_page.dart';
+import 'profile1.dart';
+import 'profile_page.dart';
+import 'login.dart';
 
 class HomePage extends GetView<HomeController>{
 
   @override
-  HomeController controller = HomeController();
+  HomeController controller = Get.put(HomeController());
 
-  final List<Widget> _children=[HomeScreen(),LoginPage(),LoginPage(),LoginPage()];
+  final List<Widget> _children=[Articles(),FavorisListPage(),TipsPage(),MessagesPage(),ProfilePage()];
 
 
   HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    //controller.databaseService.test();
     return Obx(() =>
       Scaffold(
       backgroundColor: const Color(0XFFE7EBEE),
@@ -26,7 +42,7 @@ class HomePage extends GetView<HomeController>{
       ),
       bottomNavigationBar: BottomNavigationBar(
           elevation: 5,
-          selectedItemColor: redAirbnb,
+          selectedItemColor: Constants.redAirbnb,
           unselectedItemColor: Colors.grey[800],
           type: BottomNavigationBarType.fixed,
           onTap: (int value) {

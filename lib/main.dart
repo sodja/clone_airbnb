@@ -1,10 +1,15 @@
 import 'package:airbnb_clone/views/pages/login.dart';
+import 'package:country_codes/country_codes.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../commons/routes.dart';
+import 'commons/routes.dart';
 
-void main() {
+main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  await CountryCodes.init();
   runApp(GetMaterialApp(
     title: 'Airbnb',
     debugShowCheckedModeBanner: false,
@@ -16,7 +21,7 @@ void main() {
         ),
         fontFamily: 'Poppins'
     ),
-    initialRoute: '/home',
+    initialRoute: '/loading',
     getPages: appRoutes(),
     enableLog: true,
     defaultTransition: Transition.fade,
